@@ -1,0 +1,27 @@
+<h1>Listing quality_classes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quality_classes.each do |quality_class| %>
+      <tr>
+        <td><%= quality_class.name %></td>
+        <td><%= link_to 'Show', quality_class %></td>
+        <td><%= link_to 'Edit', edit_quality_class_path(quality_class) %></td>
+        <td><%= link_to 'Destroy', quality_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quality class', new_quality_class_path %>

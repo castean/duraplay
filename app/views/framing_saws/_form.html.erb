@@ -1,0 +1,51 @@
+<%= form_for(@framing_saw) do |f| %>
+  <% if @framing_saw.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@framing_saw.errors.count, "error") %> prohibited this framing_saw from being saved:</h2>
+
+      <ul>
+      <% @framing_saw.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <%= current_user.username %>
+  <div class="field">
+    <%= f.label :plant %><br>
+    <%= f.text_field :plant %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.number_field :product_id %>
+  </div>
+    <div class="btn-group">
+      <%= f.label :quality_id,"Calidad" %><br>
+      <%= f.collection_select :quality_id, Quality.order("name"),:id, :name, options= {:prompt => "-- Selecciona una Calidad --"}, :id => "id", :type=>"button", :class=>"btn btn-default dropdown-toggle", :data_toggle=>"dropdown"   %>
+    </div> </br></br>
+    <div class="btn-group">
+      <%= f.label :dimension_id,"Dimension" %> <a title="" rel='popover'>Ayuda</a><br>
+      <%= f.collection_select :dimension_id, Dimension.order("name"),:id, :name, options= {:prompt => "-- Selecciona una dimension --"}, :id => "id", :type=>"button", :class=>"btn btn-default dropdown-toggle", :data_toggle=>"dropdown"   %>
+    </div>  </br> </br>
+    <div class="btn-group">
+      <%= f.label :thickness_id,"Espesor" %><br>
+      <%= f.collection_select :thickness_id, Thickness.order("name"),:id, :name, options= {:prompt => "-- Selecciona un espesor --"}, :id => "id", :type=>"button", :class=>"btn btn-default dropdown-toggle", :data_toggle=>"dropdown"   %>
+    </div>  </br> </br>
+  <div class="field">
+    <%= f.label :batch, "Lote" %><br>
+    <%= Time.now.strftime("%y%m-%d-%H%M")%>
+
+  </div>
+  <div class="field">
+    <%= f.label :sheet %><br>
+    <%= f.number_field :sheet %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Guardar'%>
+  </div>
+<% end %>

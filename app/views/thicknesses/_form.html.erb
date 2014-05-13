@@ -1,0 +1,34 @@
+<%= form_for(@thickness) do |f| %>
+  <% if @thickness.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thickness.errors.count, "error") %> prohibited this thickness from being saved:</h2>
+
+      <ul>
+      <% @thickness.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Nombre" %><br>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      <%= f.label :reference_code, "Codigo de Referencia" %><br>
+      <%= f.text_field :reference_code %>
+    </div>
+  <div class="field">
+    <%= f.label :inches,"Pulgadas" %><br>
+    <%= f.text_field :inches %>
+  </div>
+  <div class="field">
+    <%= f.label :milimiter,"Milimetros" %><br>
+    <%= f.text_field :milimiter %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Agregar Espesor' %>
+  </div>
+<% end %>

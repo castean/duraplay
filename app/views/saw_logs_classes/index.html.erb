@@ -1,0 +1,27 @@
+<h1>Listing saw_logs_classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Saw log class</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saw_logs_classes.each do |saw_logs_class| %>
+      <tr>
+        <td><%= saw_logs_class.saw_log_class_value %></td>
+        <td><%= link_to 'Show', saw_logs_class %></td>
+        <td><%= link_to 'Edit', edit_saw_logs_class_path(saw_logs_class) %></td>
+        <td><%= link_to 'Destroy', saw_logs_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Saw logs class', new_saw_logs_class_path %>

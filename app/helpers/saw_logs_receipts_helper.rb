@@ -1,0 +1,2 @@
+module SawLogsReceiptsHelper
+end

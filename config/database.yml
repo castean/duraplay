@@ -1,0 +1,29 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: duraplay
+  pool: 5
+  username: postgres
+  password: 123
+  host: localhost
+  port: 5432
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: duraplay_test
+  pool: 5
+  username: castean
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: duraplay
+  pool: 5
+  host: winsqlserver.duraplay.com
+  port: 5432
+  username: postgres
+  password: Dur4Pl4y

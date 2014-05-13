@@ -1,0 +1,37 @@
+<%= form_for(@saw_logs_receipt) do |f| %>
+  <% if @saw_logs_receipt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@saw_logs_receipt.errors.count, "error") %> prohibited this saw_logs_receipt from being saved:</h2>
+
+      <ul>
+      <% @saw_logs_receipt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ticket_id,"Boleto" %><br>
+    <%= f.number_field :ticket_id %>
+  </div>
+  <div class="field">
+    <%= f.label :saw_log_class_id, "Clase" %><br>
+    <%= f.collection_select :saw_log_class_id, SawLogsClass.order("saw_log_class_value"),:id, :saw_log_class_value, options= {:prompt => "-- Selecciona una clase --"}, :id => "saw_logs_class_id"  %>
+  </div>
+  <div class="field">
+    <%= f.label :low_diameter, "Diametro 1 (cm)" %><br>
+    <%= f.text_field :low_diameter %>
+  </div>
+  <div class="field">
+    <%= f.label :high_diameter, "Diametro 2 (cm)" %><br>
+    <%= f.text_field :high_diameter %>
+  </div>
+  <div class="field">
+    <%= f.label :length, "Largo (ft)" %><br>
+    <%= f.text_field :length %>
+  </div>
+  <div class="actions">
+       <%= f.submit %>
+  </div>
+<% end %>

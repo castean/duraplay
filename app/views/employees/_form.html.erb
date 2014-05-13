@@ -1,0 +1,38 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :second_lastname %><br>
+    <%= f.text_field :second_lastname %>
+  </div>
+    <div class="field">
+      <%= f.label :company_id,"Empresa" %><br>
+      <%= f.collection_select :company_id, Company.order("name"),:id, :name, options= {:prompt => "-- Selecciona una empresa --"}, :id => "id"  %>
+    </div>
+    <div class="field">
+      <%= f.label :area_id,"Area" %><br>
+      <%= f.collection_select :area_id, Area.order("name"),:id, :name, options= {:prompt => "-- Selecciona una area --"}, :id => "id"  %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

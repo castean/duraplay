@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag("duraplaylogo.png",:size => "260x180", :alt => "Duraplay") %>
+<p>
+  <strong>Planta:</strong>
+  <%= @framing_saw.plant %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @framing_saw.area %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @framing_saw.product_id %>
+</p>
+
+<p>
+  <strong>Calidad:</strong>
+  <%= @framing_saw.quality.name %>
+</p>
+
+<p>
+  <strong>Dimension:</strong>
+  <%= @framing_saw.dimension.name %>
+</p>
+
+<p>
+  <strong>Lote:</strong>
+  <%= @framing_saw.batch %>
+</p>
+
+<p>
+  <strong>Hojas:</strong>
+  <%= @framing_saw.sheet %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @framing_saw.responsible %>
+</p>
+
+<%= link_to 'Edit', edit_framing_saw_path(@framing_saw) %> |
+<%= link_to 'Back', framing_saws_path %>

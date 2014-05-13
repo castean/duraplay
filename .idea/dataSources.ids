@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails duraplay: development" uuid="82ea2a79-62d7-4d0d-8565-d5a457e16a04">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails duraplay: test" uuid="871d44c9-8893-4848-aadc-e166441e2a06">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails duraplay: production" uuid="0c6107b8-afb8-4a0e-bb95-f6169de54e31">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

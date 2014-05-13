@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @brand.name %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @brand.code %>
+</p>
+
+<p>
+  <strong>Planta:</strong>
+  <%= @brand.plant.name %>
+</p>
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@dimension) do |f| %>
+  <% if @dimension.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dimension.errors.count, "error") %> prohibited this dimension from being saved:</h2>
+
+      <ul>
+      <% @dimension.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      <%= f.label :length_mts,"Largo" %><br>
+      <%= f.text_field :length_mts %>
+    </div>
+    <div class="field">
+      <%= f.label :width_mts,"Ancho" %><br>
+      <%= f.text_field :width_mts %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

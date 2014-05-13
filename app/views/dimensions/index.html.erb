@@ -1,0 +1,29 @@
+<h1>Listing dimensions</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Largo</th>
+      <th>Ancho</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dimensions.each do |dimension| %>
+      <tr>
+        <td><%= dimension.name %></td>
+        <td><%= dimension.length_mts %></td>
+        <td><%= dimension.width_mts %></td>
+        <td><%= link_to 'Show', dimension %></td>
+        <td><%= link_to 'Edit', edit_dimension_path(dimension) %></td>
+        <td><%= link_to 'Destroy', dimension, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= pie_chart Dimension.group(:name).sum(:length_mts) %>
+<br>
+
+<%= link_to 'New Dimension', new_dimension_path %>

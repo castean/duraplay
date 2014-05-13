@@ -1,0 +1,33 @@
+<h1>Listing thicknesses</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Codigo de Referencia</th>
+      <th>Pulgadas</th>
+      <th>Milimetros</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thicknesses.each do |thickness| %>
+      <tr>
+        <td><%= thickness.name %></td>
+        <td><%= thickness.reference_code%></td>
+        <td><%= thickness.inches %></td>
+        <td><%= thickness.milimiter %></td>
+        <td><%= link_to 'Show', thickness %></td>
+        <td><%= link_to 'Edit', edit_thickness_path(thickness) %></td>
+        <td><%= link_to 'Destroy', thickness, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thickness', new_thickness_path %>

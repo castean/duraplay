@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticket:</strong>
+  <%= @saw_logs_receipt.ticket_id %>
+</p>
+
+<p>
+  <strong>Saw log class:</strong>
+  <%= @saw_logs_receipt.saw_log_class_id %>
+</p>
+
+<p>
+  <strong>Low diameter:</strong>
+  <%= @saw_logs_receipt.low_diameter %>
+</p>
+
+<p>
+  <strong>High diameter:</strong>
+  <%= @saw_logs_receipt.high_diameter %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @saw_logs_receipt.length %>
+</p>
+
+<%= link_to 'Edit', edit_saw_logs_receipt_path(@saw_logs_receipt) %> |
+<%= link_to 'Back', saw_logs_receipts_path %>

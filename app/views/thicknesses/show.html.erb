@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @thickness.name %>
+</p>
+
+<p>
+  <strong>Inches:</strong>
+  <%= @thickness.inches %>
+</p>
+
+<p>
+  <strong>Milimiter:</strong>
+  <%= @thickness.milimiter %>
+</p>
+
+<%= link_to 'Edit', edit_thickness_path(@thickness) %> |
+<%= link_to 'Back', thicknesses_path %>

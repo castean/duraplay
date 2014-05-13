@@ -1,0 +1,21 @@
+<%= form_for(@saw_logs_class) do |f| %>
+  <% if @saw_logs_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@saw_logs_class.errors.count, "error") %> prohibited this saw_logs_class from being saved:</h2>
+
+      <ul>
+      <% @saw_logs_class.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :saw_log_class_value %><br>
+    <%= f.number_field :saw_log_class_value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

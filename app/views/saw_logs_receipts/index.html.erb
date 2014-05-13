@@ -1,0 +1,36 @@
+<h1>Listado - Recibo de troceria -</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Boleto</th>
+      <th>Clase</th>
+      <th>Diametro Menor (cm)</th>
+      <th>Diametro Mayor (cm)</th>
+      <th>Largo (ft)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saw_logs_receipts.each do |saw_logs_receipt| %>
+      <tr>
+        <td><%= saw_logs_receipt.ticket_id %></td>
+        <td><%= saw_logs_receipt.saw_log_class_id %></td>
+        <td><%= saw_logs_receipt.low_diameter %></td>
+        <td><%= saw_logs_receipt.high_diameter %></td>
+        <td><%= saw_logs_receipt.length %></td>
+        <td><%= link_to 'Show', saw_logs_receipt %></td>
+        <td><%= link_to 'Edit', edit_saw_logs_receipt_path(saw_logs_receipt) %></td>
+        <td><%= link_to 'Destroy', saw_logs_receipt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<button type="button" class="btn btn-default">
+    <%= link_to 'Nuevo Recibo', new_saw_logs_receipt_path %>
+</button>

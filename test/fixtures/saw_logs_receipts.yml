@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_id: 1
+  saw_log_class_id: 1
+  low_diameter: 1.5
+  high_diameter: 1.5
+  length: 1.5
+
+two:
+  ticket_id: 1
+  saw_log_class_id: 1
+  low_diameter: 1.5
+  high_diameter: 1.5
+  length: 1.5

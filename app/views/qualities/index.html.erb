@@ -1,0 +1,34 @@
+<h1>Listing qualities</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Codigo</th>
+      <th>Clase</th>
+      <th>Marca</th>
+      <th>Planta</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualities.each do |quality| %>
+      <tr>
+        <td><%= quality.name %></td>
+        <td><%= quality.code %></td>
+        <td><%= quality.quality_class.name %></td>
+        <td><%= quality.brand.name %></td>
+        <td><%= quality.brand.plant.name %></td>
+        <td><%= link_to 'Show', quality %></td>
+        <td><%= link_to 'Edit', edit_quality_path(quality) %></td>
+        <td><%= link_to 'Destroy', quality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quality', new_quality_path %>
