@@ -38,6 +38,7 @@ Duraplay::Application.routes.draw do
   get "user_sessions/new"
   resources :users
 
+
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
 
