@@ -1,6 +1,6 @@
 class FacesController < ApplicationController
   before_action :set_face, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /faces
   # GET /faces.json
   def index

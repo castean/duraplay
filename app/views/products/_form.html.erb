@@ -13,11 +13,14 @@
     <div class="field">
       <%= f.label :plant_id, "Planta" %><br>
       <%= f.collection_select :plant_id, Plant.order("name"),:id, :name, options= {:prompt => "-- Selecciona una planta --"}, :id => "id"  %>
+
     </div>
+
     <div class="field">
       <%= f.label :brand_id, "Producto" %><br>
-      <%= f.collection_select :brand_id, Brand.order("name"),:id, :code, options= {:prompt => "-- Selecciona una marca --"}, :id => "id"  %>
+      <%= f.collection_select :brand_id,  Brand.order("name").where(plant_id: @product.plant_id), :id, :name, options ={:prompt => ""} %>
     </div>
+
     <div class="field">
       <%= f.label :quality_id, "Calidad" %><br>
       <%= f.collection_select :quality_id, Quality.order("name"),:id, :code, options= {:prompt => "-- Selecciona una calidad --"}, :id => "id"  %>

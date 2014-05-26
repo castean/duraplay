@@ -1,6 +1,7 @@
+#encoding:utf-8
 class SawLogsClassesController < ApplicationController
   before_action :set_saw_logs_class, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /saw_logs_classes
   # GET /saw_logs_classes.json
   def index

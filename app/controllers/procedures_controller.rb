@@ -1,6 +1,7 @@
+#encoding:utf-8
 class ProceduresController < ApplicationController
   before_action :set_procedure, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /procedures
   # GET /procedures.json
   def index

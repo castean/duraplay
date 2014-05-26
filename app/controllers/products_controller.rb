@@ -1,6 +1,7 @@
+#encoding:utf-8
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /products
   # GET /products.json
   def index
@@ -71,4 +72,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :plant_id, :brand_id, :quality_id, :face_id, :covering_one, :covering_two, :thickness_id, :dimension_id, :code_thickness, :code_dimension)
     end
+
+
 end

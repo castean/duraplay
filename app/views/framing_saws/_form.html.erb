@@ -10,18 +10,22 @@
       </ul>
     </div>
   <% end %>
-   <%= current_user.username %>
+   <% current_user.username %></br>
+
   <div class="field">
-    <%= f.label :plant %><br>
-    <%= f.text_field :plant %>
+    <%= f.label :plant, "Planta" %><br>
+    <%= a = Plant.find(current_plant).name%>
+    <%= f.hidden_field :plant_id, :value => current_plant %>
   </div>
   <div class="field">
-    <%= f.label :area %><br>
-    <%= f.text_field :area %>
+    <%= f.label :area, "Area" %><br>
+    <%= b = Area.find(current_area).name %>
+    <%= f.hidden_field :area_id, :value => current_area %>
   </div>
   <div class="field">
-    <%= f.label :product_id %><br>
-    <%= f.number_field :product_id %>
+    <%= f.label :product_id, "Producto" %><br>
+    <%= "AGLOMERADO" %>
+    <%= f.hidden_field :product_id %>
   </div>
     <div class="btn-group">
       <%= f.label :quality_id,"Calidad" %><br>
@@ -38,11 +42,14 @@
   <div class="field">
     <%= f.label :batch, "Lote" %><br>
     <%= Time.now.strftime("%y%m-%d-%H%M")%>
-
   </div>
   <div class="field">
-    <%= f.label :sheet %><br>
+    <%= f.label :sheet, "Cantidad de Hojas" %><br>
     <%= f.number_field :sheet %>
+  </div>
+  <div class="field">
+    <%= f.label :responsible, "Area" %><br>
+    <%= f.hidden_field :responsible, :value => fullname%>
   </div>
 
   <div class="actions">

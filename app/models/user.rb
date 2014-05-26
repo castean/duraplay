@@ -1,4 +1,6 @@
+#encoding:utf-8
 class User < ActiveRecord::Base
+  belongs_to :employee
   acts_as_authentic
   #attr_accessible :username, :email, :password, :password_confirmation
 

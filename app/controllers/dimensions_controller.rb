@@ -1,6 +1,6 @@
 class DimensionsController < ApplicationController
   before_action :set_dimension, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /dimensions
   # GET /dimensions.json
   def index

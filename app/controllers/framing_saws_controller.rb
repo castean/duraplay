@@ -1,6 +1,6 @@
 class FramingSawsController < ApplicationController
   before_action :set_framing_saw, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /framing_saws
   # GET /framing_saws.json
   def index
@@ -79,6 +79,6 @@ class FramingSawsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def framing_saw_params
-      params.require(:framing_saw).permit(:plant, :area, :product_id, :quality_id, :dimension_id, :batch, :sheet, :responsible, :thickness_id, :status_id, :cubic_meters)
+      params.require(:framing_saw).permit(:plant_id, :area_id, :product_id, :quality_id, :dimension_id, :batch, :sheet, :responsible, :thickness_id, :status_id, :cubic_meters)
     end
 end

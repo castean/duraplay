@@ -1,6 +1,7 @@
+#encoding:utf-8
 class ThicknessesController < ApplicationController
   before_action :set_thickness, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /thicknesses
   # GET /thicknesses.json
   def index

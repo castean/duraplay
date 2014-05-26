@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /brands
   # GET /brands.json
   def index
@@ -71,4 +71,11 @@ class BrandsController < ApplicationController
     def brand_params
       params.require(:brand).permit(:name, :code, :plant_id)
     end
+
+  def for_plantid
+    @brands = Brand.where(plant_id: params[:id]).sort_by{ |k| k['name'] }
+    respond_to do |format|
+      format.json  { render :json => @brands }
+    end
+  end
 end

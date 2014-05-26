@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'rails_layout'
 gem "rails-erd"
+#gem "pundit"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -37,6 +38,7 @@ gem 'groupdate'
 #gemas agregadas
 gem 'authlogic'
 gem 'scrypt'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

@@ -1,6 +1,7 @@
+#encoding:utf-8
 class ZonesController < ApplicationController
   before_action :set_zone, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /zones
   # GET /zones.json
   def index

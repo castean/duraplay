@@ -3,17 +3,18 @@
 <%= image_tag("duraplaylogo.png",:size => "260x180", :alt => "Duraplay") %>
 <p>
   <strong>Planta:</strong>
-  <%= @framing_saw.plant %>
+  <%= @framing_saw.plant.name %>
 </p>
 
 <p>
   <strong>Area:</strong>
-  <%= @framing_saw.area %>
+  <%= @framing_saw.area.name %>
 </p>
 
 <p>
   <strong>Producto:</strong>
-  <%= @framing_saw.product_id %>
+  AGLOMERADO
+  <%#@framing_saw.product_id %>
 </p>
 
 <p>
@@ -25,6 +26,12 @@
   <strong>Dimension:</strong>
   <%= @framing_saw.dimension.name %>
 </p>
+
+<p>
+  <strong>Espesor:</strong>
+  <%= @framing_saw.thickness.name %>
+</p>
+
 
 <p>
   <strong>Lote:</strong>
@@ -43,3 +50,6 @@
 
 <%= link_to 'Edit', edit_framing_saw_path(@framing_saw) %> |
 <%= link_to 'Back', framing_saws_path %>
+
+
+<%#= debug @framing_saw %>

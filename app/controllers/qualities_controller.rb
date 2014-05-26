@@ -1,6 +1,7 @@
+#encoding:utf-8
 class QualitiesController < ApplicationController
   before_action :set_quality, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /qualities
   # GET /qualities.json
   def index

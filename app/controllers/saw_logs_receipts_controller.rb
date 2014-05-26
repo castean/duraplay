@@ -1,6 +1,7 @@
+#encoding:utf-8
 class SawLogsReceiptsController < ApplicationController
   before_action :set_saw_logs_receipt, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /saw_logs_receipts
   # GET /saw_logs_receipts.json
   def index

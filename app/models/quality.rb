@@ -1,3 +1,4 @@
+#encoding:utf-8
 class Quality < ActiveRecord::Base
   belongs_to :quality_class
   has_many :quality_classes

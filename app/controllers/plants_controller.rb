@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_user
   # GET /plants
   # GET /plants.json
   def index

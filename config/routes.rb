@@ -18,6 +18,7 @@ Duraplay::Application.routes.draw do
 
   resources :areas
 
+
   resources :plants
 
   resources :framing_saws
@@ -25,6 +26,7 @@ Duraplay::Application.routes.draw do
 
   resources :dimensions
 
+  match '/brands/for_plantid/:id' => 'brands#for_plantid', via: [:all]
   resources :products
 
   resources :thicknesses
