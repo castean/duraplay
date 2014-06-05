@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   belongs_to :thickness
   belongs_to :dimension
 
-  before_save :get_name
+  before_validation :get_name
 
   def get_name
     self.name = self.plant.code + "-" + self.brand.code + self.quality.code
